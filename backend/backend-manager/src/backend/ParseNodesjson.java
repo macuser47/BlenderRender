@@ -11,7 +11,7 @@ import org.json.*;
 
 public class ParseNodesjson {
 
-	static Map<String, String> ParseNodesjson() throws FileNotFoundException  {
+	static Map<String, String> ParseNodesjson() throws FileNotFoundException {
 
 		String outString = JsonToString.JsonToString("NodeList.json");
 
@@ -20,8 +20,8 @@ public class ParseNodesjson {
 
 		// creates a JSONObject array element for each object in the Nodelist
 		// JSONArray
-		
-		//dont do this
+
+		// dont do this
 		JSONObject[] Objects = new JSONObject[array.length()];
 
 		for (int i = 0; i < Objects.length; i++) {
@@ -31,19 +31,18 @@ public class ParseNodesjson {
 		}
 
 		Map<String, String> IPGPU = new HashMap<String, String>();
-		//String[] nodeRoot = new String[Objects.length];
+		// String[] nodeRoot = new String[Objects.length];
 
 		for (int i = 0; i < Objects.length; i++) {
 
 			// Associates gpu with an IP address
-			for(int j = 0; j <Objects[i].getJSONArray("gpus").length(); j++){
-				IPGPU.put(Objects[i].getJSONArray("gpus").getJSONObject(j).getString("name"), Objects[i].getString("ip"));
+			for (int j = 0; j < Objects[i].getJSONArray("gpus").length(); j++) {
+				IPGPU.put(Objects[i].getJSONArray("gpus").getJSONObject(j).getString("name"),
+						Objects[i].getString("ip"));
 			}
-			
-			
 
 		}
-		System.out.println(IPGPU);
+		
 		return IPGPU;
 	}
 }

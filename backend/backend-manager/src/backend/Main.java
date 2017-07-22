@@ -1,12 +1,13 @@
 package backend;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class Main {
 
-	public static void main(String[] args) throws InterruptedException, FileNotFoundException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 
 		boolean RunServerManager = true;
 
@@ -25,7 +26,7 @@ public class Main {
 			// run .py script for respective gpu
 			AllocateGpu.AllocateGpu(Queue);
 
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 		}
 
 	}

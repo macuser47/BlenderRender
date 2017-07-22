@@ -8,7 +8,7 @@
             "priority": 1,
             "target": "980",
             "rendering": true,
-            "isFinished": false,
+            "isFinished": true,
             "output": "C:\bleh.zip"
 		},
        	{
