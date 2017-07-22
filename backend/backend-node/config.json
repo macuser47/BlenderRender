@@ -1,0 +1,13 @@
+{
+	"GPUList": [
+		{
+			"name": "980",
+			"miner-index": 1
+		},
+		{
+			"name": "580",
+			"miner-index": 0
+		}
+	],
+	"manager root": "\\\\DESKTOP-0DVU4ND\\RenderStorage\\RenderStorage\\"
+}
