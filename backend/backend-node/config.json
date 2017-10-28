@@ -2,12 +2,16 @@
 	"GPUList": [
 		{
 			"name": "980",
-			"miner-index": 1
+			"miner-index": 1,
+			"mineable": true
 		},
 		{
 			"name": "580",
-			"miner-index": 0
+			"miner-index": 0,
+			"mineable": true
 		}
 	],
-	"manager root": "\\\\DESKTOP-0DVU4ND\\RenderStorage\\RenderStorage\\"
+	"manager root": "C:\\Users\\fred\\Documents\\GitHub\\BlenderRender\\backend\\backend-node\\",
+	"miner launcher": "C:\\Users\\fred\\Desktop\\ree.bat",
+	"output": "C:\\Users\\fred\\Desktop"
 }
