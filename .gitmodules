@@ -1,3 +1,0 @@
-[submodule ".\\backend\\backend-node\\winPyC"]
-	path = .\\backend\\backend-node\\winPyC
-	url = git://github.com/macuser47/Windows-Python-Control
