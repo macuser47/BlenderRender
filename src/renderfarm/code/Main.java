@@ -1,5 +1,8 @@
 package renderfarm.code;
 
+import java.io.IOException;
+import java.net.SocketException;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -20,32 +23,30 @@ public class Main {
 
 		System.out.println("Attempting to connect");
 
-		try {
-			for (int attempt = 0; attempt <= 5; attempt++) {
+		for (int attempt = 0; attempt <= 2; attempt++) {
 
-				System.out.println("Attempting to connect to: " + serverIP + ":" + serverPort + " " + attempt);
+			System.out.println("Attempting to connect to: " + serverIP + ":" + serverPort + " " + attempt);
 
+			try {
 				client.startConnection(serverIP, serverPort);
-
 				if (client.sendMessage(defualtClientMessage).equals("ServerAlreadyRunning")) {
 
 					connectionRecieved = true;
 					attempt = 5;
 
 				}
-
+			} catch (NullPointerException e) {
+				ErrorLogger.logStack(e, "ServerNotFound");
 			}
-		} catch (java.lang.NullPointerException e) {
-			ErrorLogger.logStack(e, "ServerNotFound");
+			
+
 		}
-		
-		
+
 		System.out.println("Program has progressed past the connection attempt phase.");
 
-		
-		
 		if (connectionRecieved == true) {
 			System.out.println("Starting Client");
+			
 			client.startConnection(serverIP, serverPort);
 
 		} else if (connectionRecieved == false) {
@@ -53,6 +54,8 @@ public class Main {
 			RenderFarmManager server = new RenderFarmManager();
 			server.start(serverPort);
 
+			// run if somehow a bit is not 0 or 1
+			// this is quantum proofing at its finest
 		} else {
 
 			ErrorLogger.logString("Unable to determine if connection was recieved. Main.java", "UknownConnectionError");

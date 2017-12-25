@@ -18,8 +18,9 @@ public class RenderFarmClient {
 		try {
 			clientSocket = new Socket(ip, port);
 			clientSocket.connect(new InetSocketAddress(ip, port), 1000);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			ErrorLogger.logStack(e, "ClientSocket connection failure");
 			e.printStackTrace();
 		}
 
